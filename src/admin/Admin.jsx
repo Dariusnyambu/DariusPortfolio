@@ -23,9 +23,10 @@ function Categories(){
     <ul className="mt-6 space-y-1">{all.filter(c=>!c.parent_id).map(c=><li key={c.id}><b>{c.name}</b> <button className="text-gold ml-2" onClick={()=>del(c)}>Delete</button><ul className="ml-5">{all.filter(s=>s.parent_id===c.id).map(s=><li key={s.id}>{s.name} <button className="text-gold ml-2" onClick={()=>del(s)}>Delete</button></li>)}</ul></li>)}</ul></div>}
 function Messages(){
   const [n,setN]=useState(0),q=useQuery(s=>s.from('contact_messages').select('*').order('created_at',{ascending:false}),[n])
+  const del=async m=>{if(confirm(`Delete the message from ${m.name}? This can’t be undone.`)){await supabase.from('contact_messages').delete().eq('id',m.id);setN(n+1)}}
   const set=async(m,status)=>{await supabase.from('contact_messages').update({status}).eq('id',m.id);setN(n+1)}
   return<div className="space-y-4">{q.data?.length===0&&<p className="opacity-70">No messages yet.</p>}{q.data?.map(m=><div key={m.id} className="border border-bone/20 p-4"><b>{m.name}</b> · {m.email} {m.phone&&`· ${m.phone}`}{m.service&&<p className="text-gold text-sm">Service: {m.service}</p>}<p className="my-2">{m.message}</p>
-    <select value={m.status} onChange={e=>set(m,e.target.value)} aria-label="Status" className="bg-ink border border-bone/30 p-1">{['new','read','contacted','closed'].map(s=><option key={s}>{s}</option>)}</select></div>)}</div>}
+    <select value={m.status} onChange={e=>set(m,e.target.value)} aria-label="Status" className="bg-ink border border-bone/30 p-1">{['new','read','contacted','closed'].map(s=><option key={s}>{s}</option>)}</select><button className="text-gold ml-4 text-sm" onClick={()=>del(m)}>Delete</button></div>)}</div>}
 export default function Admin(){
   const [state,setState]=useState('checking')
   useEffect(()=>{(async()=>{const {data:{user}}=await supabase.auth.getUser();if(!user)return setState('out')
