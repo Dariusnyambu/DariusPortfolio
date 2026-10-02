@@ -4,6 +4,7 @@ import {Phone,Mail,MessageCircle} from 'lucide-react'
 import {supabase,configured} from '../lib/supabase'
 import {useQuery,useSettings,Seo} from '../lib/useData'
 import {priceText,tel,wa} from '../lib/price'
+import Socials from '../lib/Socials'
 export default function Contact(){
   const s=useSettings(),[sp]=useSearchParams(),[sel,setSel]=useState(sp.get('service')||''),[st,setSt]=useState({s:'idle'})
   const pk=useQuery(z=>z.from('pricing_packages').select('id,name,price_prefix,price_amount,billing,kind').eq('bookable',true).order('position'))
@@ -16,7 +17,7 @@ export default function Contact(){
   const cl="flex items-center gap-3 card p-3 hover:border-gold"
   return<section className="px-5 md:px-10 pt-24 pb-12"><Seo title="Contact & Booking — Darius Nyambu" description="Book logo design, brand identity, ads, animation and website work with Darius Nyambu in Nairobi."/>
     <h1 className="text-3xl md:text-5xl font-bold mb-6">Start a <span className="grad-text">project</span></h1>
-    <div className="grid md:grid-cols-5 gap-6"><div className="md:col-span-2 space-y-3"><a className={cl} href={tel(s.phone)}><Phone className="text-gold" size={20}/>{s.phone}</a><a className={cl} href={`mailto:${s.email}`}><Mail className="text-gold" size={20}/>{s.email}</a><a className={cl} href={wa(s.phone)} target="_blank" rel="noopener noreferrer"><MessageCircle className="text-gold" size={20}/>WhatsApp</a></div>
+    <div className="grid md:grid-cols-5 gap-6"><div className="md:col-span-2 space-y-3"><a className={cl} href={tel(s.phone)}><Phone className="text-gold" size={20}/>{s.phone}</a><a className={cl} href={`mailto:${s.email}`}><Mail className="text-gold" size={20}/>{s.email}</a><a className={cl} href={wa(s.phone)} target="_blank" rel="noopener noreferrer"><MessageCircle className="text-gold" size={20}/>WhatsApp</a><Socials social={s.social}/></div>
       <form onSubmit={submit} className="md:col-span-3 card p-4 md:p-6 grid sm:grid-cols-2 gap-4">
         {I('name','Name',{required:true})}{I('email','Email',{type:'email',required:true})}{I('phone','Phone')}
         <label className="block"><span className="text-sm opacity-70">Service</span><select name="service" value={sel} onChange={e=>setSel(e.target.value)} className="mt-1 w-full bg-ink border border-bone/20 rounded-xl px-3 py-2 focus:border-gold outline-none"><option value="">Other / not sure</option>

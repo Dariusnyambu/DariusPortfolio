@@ -5,6 +5,7 @@ import {Menu,X} from 'lucide-react'
 import Home from './pages/Home'
 import {useSettings} from './lib/useData'
 import {Cursor,Intro,Magnetic} from './lib/fx'
+import Socials from './lib/Socials'
 const L=n=>lazy(()=>import(`./pages/${n}.jsx`))
 const Work=L('Work'),Project=L('Project'),Contact=L('Contact'),About=L('About'),Services=L('Services'),Blog=L('Blog'),BlogPost=L('BlogPost')
 const Login=lazy(()=>import('./admin/Login')),Admin=lazy(()=>import('./admin/Admin'))
@@ -27,7 +28,7 @@ function Shell({children}){
   {children}
   <footer className="px-5 md:px-10 py-12 text-sm grid md:grid-cols-2 gap-6 border-t border-bone/20">
     <div><p className="opacity-70">{s.footer_text||`© ${new Date().getFullYear()} Darius Nyambu · Nairobi`}</p>{s.email&&<a className="hover:text-gold" href={`mailto:${s.email}`}>{s.email}</a>}</div>
-    <ul className="flex flex-wrap gap-4 md:justify-end">{socials.filter(k=>s.social?.[k]).map(k=><li key={k}><a className="capitalize hover:text-gold" href={s.social[k]} target="_blank" rel="noopener noreferrer">{k}</a></li>)}</ul></footer></>}
+    <div className="md:justify-self-end"><Socials social={s.social}/></div></footer></>}
 export default function App(){
   const loc=useLocation()
   if(loc.pathname.startsWith('/admin'))return<Suspense fallback={<p className="p-10">Loading…</p>}><Routes><Route path="/admin/login" element={<Login/>}/><Route path="/admin/*" element={<Admin/>}/></Routes></Suspense>

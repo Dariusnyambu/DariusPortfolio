@@ -9,7 +9,7 @@ export function useQuery(fn,deps=[]){
   return s}
 let sp
 export function useSettings(){const [v,setV]=useState(DEFAULTS)
-  useEffect(()=>{if(!configured)return;sp??=supabase.from('site_settings').select('value').eq('key','site').maybeSingle().then(r=>r.data?.value||{});sp.then(x=>setV({...DEFAULTS,...Object.fromEntries(Object.entries(x).filter(([,y])=>y&&(typeof y!=='object'||Object.keys(y).length)))}))},[]);return v}
+  useEffect(()=>{if(!configured)return;sp??=supabase.from('site_settings').select('value').eq('key','site').maybeSingle().then(r=>r.data?.value||{});sp.then(x=>{const c=Object.fromEntries(Object.entries(x).filter(([,y])=>y&&(typeof y!=='object'||Object.keys(y).length)));setV({...DEFAULTS,...c,social:{...DEFAULTS.social,...Object.fromEntries(Object.entries(x.social||{}).filter(([,y])=>y))}})})},[]);return v}
 export function Seo({title,description,image,canonical,keywords,jsonLd,type='website'}){
   useEffect(()=>{document.title=title
     const img=image||location.origin+'/darius.jpg',url=canonical||location.origin+location.pathname
