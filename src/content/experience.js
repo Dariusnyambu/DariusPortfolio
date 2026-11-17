@@ -1,0 +1,13 @@
+// Add dates or industries here when you want them shown. Nothing is displayed that isn't listed.
+export const experience=[
+{org:'BahatiBet',role:'Social Media Manager',points:['Managing social media platforms.','Creating content for marketing and audience engagement.','Designing promotional graphics.','Editing videos and producing engaging content.','Developing creative materials for marketing campaigns.']},
+{org:'ImaraBet',role:'Social Media Manager',points:['Managing social media platforms.','Creating promotional and marketing content.','Designing social media graphics.','Editing videos and producing engaging content.','Supporting brand visibility through digital content.']},
+{org:'FGCK Christ Centre',role:'Social Media Content Creator & Manager',points:['Managing church social media platforms.','Creating and editing digital content.','Designing church event posters, promotional graphics, and banners.','Creating YouTube thumbnails.','Editing videos for church activities, events, and sermons.','Producing content for worship experiences, conferences, and church programs.']},
+{org:'Shelter Investment',role:'Graphic Designer & Digital Content Creator',industry:'Real Estate & Investment',points:['Designing professional marketing graphics.','Creating promotional materials for real estate marketing.','Developing branded visual content for social media.','Designing creatives to communicate company services and investment opportunities.']}]
+export const skillCategories=['Web Design & Development','Graphic Design & Visual Communication','Video Editing & Content Production','Social Media Management','Digital Marketing Content Creation','Branding & Creative Design']
+export const smmSkills=['Social media account management','Content strategy and planning','Creating content for marketing and audience engagement','Social media graphic design','Video editing and short-form video production','Promotional content and advertising creatives','Content scheduling and publishing','Audience engagement and community management','Brand consistency and online presence management','Managing different social media platforms']
+export const tools=[
+{name:'Adobe Photoshop',desc:'Graphic design and marketing creatives',badge:'Ps',color:'#31A8FF'},
+{name:'Canva',desc:'Social media content and digital designs',badge:'Ca',color:'#00C4CC'},
+{name:'Adobe Premiere Pro',desc:'Video editing and content production',badge:'Pr',color:'#9999FF'},
+{name:'React',desc:'Development',badge:'Re',color:'#61DAFB'},{name:'Vite',desc:'Development',badge:'Vi',color:'#A78BFA'},{name:'Tailwind CSS',desc:'Development',badge:'Tw',color:'#38BDF8'},{name:'Supabase',desc:'Development',badge:'Su',color:'#3ECF8E'},{name:'JavaScript',desc:'Development',badge:'JS',color:'#F7DF1E'}]

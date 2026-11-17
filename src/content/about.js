@@ -1,4 +1,5 @@
 export const intro=[
+"I’m a multidisciplinary digital creative working across web design and development, graphic design, video editing, social media management and digital content creation.",
 "I’m a self-taught creative professional from Kenya with a passion for turning ideas into brands, digital experiences, creative advertisements, animations, and functional digital products that people can connect with.",
 "My journey started with graphic design. Over time, my curiosity pushed me beyond Photoshop and Illustrator into web design, frontend development, web applications, digital marketing, creative advertising, and animation.",
 "Today, I combine design, technology, motion, and storytelling to help businesses, organizations, and individuals build stronger brands and digital experiences."]
@@ -9,7 +10,9 @@ export const whatIDo=[
 ["Animation & Motion Design","animated posters, promotional animations, motion graphics, social media content, and visual storytelling."],
 ["UI/UX Design","clean and intuitive digital interfaces that balance aesthetics with usability."],
 ["Digital Marketing & Creative Content","visual campaigns and digital content designed to help brands communicate and reach their audience."],
-["Web Applications","functional digital platforms that solve specific problems, from business systems to customer-facing applications."]]
+["Web Applications","functional digital platforms that solve specific problems, from business systems to customer-facing applications."],
+["Video Editing & Content Production","video editing and short-form video production for marketing, events and sermons."],
+["Social Media Management","managing social media platforms, planning and publishing content, and engaging audiences."]]
 export const sections=[
 ["My Approach",["I believe good creative work is more than making something look beautiful.","It should communicate clearly, tell a story, solve a problem, create an experience, and serve a purpose.","Whether I'm designing a brand identity, creating a social media advertisement, animating a campaign, or building a web application, I think about how the final product will work for the people it's intended for."]],
 ["Design Meets Technology",["One of the things that defines my work is my ability to move between creative and technical thinking.","I can design a visual identity, create an advertising concept, bring that concept to life through animation, design a responsive interface, and build the actual web experience behind it.","This allows me to approach projects from multiple perspectives — as a designer, developer, animator, and creative strategist."]],
